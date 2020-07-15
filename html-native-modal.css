@@ -45,18 +45,15 @@ dialog:not([open]) {
 }
 
 [data-modal='closing'] {
-  animation-play-state: reverse;
   opacity: 0;
   transform: translateY(-5vh);
   pointer-events: none;
 }
 [data-modal='closing']::backdrop {
-  animation-play-state: reverse;
   opacity: 0;
   pointer-events: none;
 }
 [data-modal='closing'] + dialog-backdrop {
-  animation-play-state: reverse;
   opacity: 0;
   pointer-events: none;
 }

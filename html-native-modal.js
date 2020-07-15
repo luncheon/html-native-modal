@@ -1,39 +1,40 @@
 if (typeof HTMLDialogElement === 'undefined') {
   const showModal = HTMLElement.prototype.showModal
   const close = HTMLElement.prototype.close
-
-  HTMLElement.prototype.showModal = function () {
-    if (this.tagName === 'DIALOG') {
-      if (this.hasAttribute('open')) {
-        this.setAttribute('data-modal', '')
-      } else {
-        this.setAttribute('open', '')
-        this.setAttribute('data-modal', '')
-        this.insertAdjacentElement('afterend', document.createElement('dialog-backdrop'))
+  const onAnimationEnd = function () {
+    if (this.getAttribute('data-modal') === 'closing') {
+      document.body.removeAttribute('data-contains-modal')
+      const backdrop = this.nextElementSibling
+      if (backdrop && backdrop.tagName === 'DIALOG-BACKDROP') {
+        backdrop.remove()
       }
-      document.body.setAttribute('data-contains-modal', '')
-    } else {
-      showModal.apply(this, arguments)
+      this.removeAttribute('data-modal')
+      this.removeAttribute('open')
     }
   }
 
-  HTMLElement.prototype.close = function () {
-    if (this.tagName === 'DIALOG') {
-      this.setAttribute('data-modal', 'closing')
-      this.addEventListener('transitionend', function () {
-        if (this.getAttribute('data-modal') === 'closing') {
-          document.body.removeAttribute('data-contains-modal')
-          const backdrop = this.nextElementSibling
-          if (backdrop && backdrop.className === 'backdrop') {
-            backdrop.remove()
-          }
-          this.removeAttribute('data-modal')
-          this.removeAttribute('open')
-        }
-      })
-    } else {
-      close.apply(this, arguments)
+  HTMLElement.prototype.showModal = function () {
+    if (this.tagName !== 'DIALOG') {
+      return showModal.apply(this, arguments)
     }
+    this.addEventListener('animationend', onAnimationEnd)
+    this.addEventListener('animationcancel', onAnimationEnd)
+    this.addEventListener('transitionend', onAnimationEnd)
+    if (this.hasAttribute('open')) {
+      this.setAttribute('data-modal', '')
+    } else {
+      this.setAttribute('open', '')
+      this.setAttribute('data-modal', '')
+      this.insertAdjacentElement('afterend', document.createElement('dialog-backdrop'))
+    }
+    document.body.setAttribute('data-contains-modal', '')
+  }
+
+  HTMLElement.prototype.close = function () {
+    if (this.tagName !== 'DIALOG' || !this.hasAttribute('data-modal') || this.getAttribute('data-modal') === 'closing') {
+      return close.apply(this, arguments)
+    }
+    this.setAttribute('data-modal', 'closing')
   }
 
   addEventListener('click', function (event) {
@@ -48,24 +49,29 @@ if (typeof HTMLDialogElement === 'undefined') {
 } else {
   const showModal = HTMLDialogElement.prototype.showModal
   const close = HTMLDialogElement.prototype.close
+  const onAnimationEnd = function () {
+    if (this.getAttribute('data-modal') === 'closing') {
+      document.body.removeAttribute('data-contains-modal')
+      this.removeAttribute('data-modal')
+      close.apply(this, arguments)
+    }
+  }
 
   HTMLDialogElement.prototype.showModal = function () {
+    this.addEventListener('animationend', onAnimationEnd)
+    this.addEventListener('animationcancel', onAnimationEnd)
+    this.addEventListener('transitionend', onAnimationEnd)
     this.setAttribute('data-modal', '')
     close.call(this)
-    showModal.apply(this, arguments)
     document.body.setAttribute('data-contains-modal', '')
+    showModal.apply(this, arguments)
   }
 
   HTMLDialogElement.prototype.close = function () {
     if (this.hasAttribute('data-modal')) {
       this.setAttribute('data-modal', 'closing')
-      this.addEventListener('transitionend', function () {
-        if (this.getAttribute('data-modal') === 'closing') {
-          document.body.removeAttribute('data-contains-modal')
-          this.removeAttribute('data-modal')
-          close.apply(this, arguments)
-        }
-      })
+    } else {
+      return close.apply(this, arguments)
     }
   }
 
