@@ -11,7 +11,23 @@ Dead simple modal library based on the HTML 5.2 native `<dialog>`.
 
 ## Installation
 
-T.B.D.
+### npm
+
+```bash
+npm i html-native-modal
+```
+
+### CDN
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.1.0/html-native-modal.css">
+<script src="https://cdn.jsdelivr.net/npm/html-native-modal@0.1.0"></script>
+```
+
+### Download
+
+* <a target="_blank" download="html-native-modal.css" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.1.0/html-native-modal.css">html-native-modal.css</a>
+* <a target="_blank" download="html-native-modal.js" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.1.0">html-native-modal.js</a>
 
 
 ## Usage
