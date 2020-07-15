@@ -1,6 +1,6 @@
 {
   "name": "html-native-modal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dead simple modal library based on the HTML 5.2 native `<dialog>`.",
   "license": "WTFPL",
   "repository": "luncheon/html-native-modal",
