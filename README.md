@@ -6,7 +6,7 @@ Dead simple modal library based on the HTML 5.2 native `<dialog>`.
 * Tiny. JS < 100 lines, CSS < 100 lines.
 * No dependencies. No [dialog-polyfill](https://github.com/GoogleChrome/dialog-polyfill).
 
-[Demo](https://luncheon.github.io/html-native-modal/)
+[Demo](https://luncheon.github.io/html-native-modal/index.html)
 
 
 ## Installation
@@ -40,3 +40,4 @@ T.B.D.
 * https://github.com/robinparisi/tingle
 * https://github.com/edenspiekermann/a11y-dialog
 * https://github.com/KaneCohen/modal-vanilla
+* https://github.com/hubspot/vex
