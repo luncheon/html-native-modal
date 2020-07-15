@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>html-native-modal</title>
+    <link rel="stylesheet" href="html-native-modal.css">
+  </head>
+  <body>
+    <script src="html-native-modal.js"></script>
+
+    <header>
+      <h1 style="margin: 0 .25em 0 0; display: inline; font-size: 2rem;">html-native-modal</h1>
+      <a href="https://github.com/luncheon/html-native-modal">
+        <img alt="GitHub" src="https://cdn.jsdelivr.net/npm/@primer/octicons@10.0.0/build/svg/mark-github-16.svg" style="width: 2rem; height: 2rem;">
+      </a>
+      <p>Dead simple modal library based on the HTML 5.2 native &lt;dialog&gt;.</p>
+    </header>
+
+    <button onclick="this.nextElementSibling.showModal()">Open</button>
+    <dialog style="width: 480px; padding: 16px 32px;">
+      <button style="float: right;" onclick="this.parentElement.close()">Close</button>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </dialog>
+  </body>
+</html>
