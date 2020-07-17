@@ -4,6 +4,7 @@ Dead simple modal library based on the HTML 5.2 native `<dialog>`.
 
 * Use `<dialog>` tag, `dialogElement.showModal()` and `dialogElement.close()`.
 * Tiny. JS < 100 lines, CSS < 100 lines.
+* Works in IE 11.
 * No dependencies. No [dialog-polyfill](https://github.com/GoogleChrome/dialog-polyfill).
 
 [Demo](https://luncheon.github.io/html-native-modal/index.html)

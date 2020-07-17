@@ -2,8 +2,7 @@
   const cancel = function (dialog) {
     const event = document.createEvent('Event')
     event.initEvent('cancel', false, true)
-    dialog.dispatchEvent(event)
-    event.defaultPrevented || dialog.close('cancel')
+    dialog.dispatchEvent(event) && dialog.close('cancel')
   }
 
   if (typeof HTMLDialogElement === 'undefined') {
@@ -13,7 +12,7 @@
       if (this.getAttribute('data-modal') === 'closing') {
         document.body.removeAttribute('data-contains-modal')
         const backdrop = this.nextElementSibling
-        backdrop && backdrop.tagName === 'DIALOG-BACKDROP' && backdrop.remove()
+        backdrop && backdrop.tagName === 'DIALOG-BACKDROP' && backdrop.parentElement && backdrop.parentElement.removeChild(backdrop)
         this.removeAttribute('data-modal')
         this.removeAttribute('open')
       }
