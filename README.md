@@ -21,14 +21,14 @@ npm i html-native-modal
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.0/html-native-modal.css">
-<script src="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.0"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1/html-native-modal.css">
+<script src="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1"></script>
 ```
 
 ### Download
 
-* <a target="_blank" download="html-native-modal.css" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.0/html-native-modal.css">html-native-modal.css</a>
-* <a target="_blank" download="html-native-modal.js" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.0/html-native-modal.js">html-native-modal.js</a>
+* <a target="_blank" download="html-native-modal.css" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1/html-native-modal.css">html-native-modal.css</a>
+* <a target="_blank" download="html-native-modal.js" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1/html-native-modal.js">html-native-modal.js</a>
 
 
 ## Usage
