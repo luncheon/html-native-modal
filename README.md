@@ -45,6 +45,27 @@ npm i html-native-modal
 ```
 
 
+## Canceling Canceling
+
+By default, pressing the `Esc` key or clicking on the background will close the dialog.  
+To disable this behavior, listen for the `cancel` event and call `event.preventDefault()`.
+
+```html
+<dialog id="my-modal" style="width: 300px; padding: 16px 32px;">
+  <button style="float: right;" onclick="this.parentElement.close()">Close</button>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, ...</p>
+</dialog>
+
+<script>
+  document.getElementById('my-modal').addEventListener('cancel', function (event) {
+    event.preventDefault()
+  });
+</script>
+```
+
+Inlined `<dialog oncancel="arguments[0].preventDefault()">...</dialog>` does not work on the browsers that don't support `HTMLDialogElement` natively.
+
+
 ## License
 
 [WTFPL](http://www.wtfpl.net)
