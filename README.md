@@ -16,6 +16,9 @@ Dead simple modal library based on the HTML 5.2 native `<dialog>`.
 
 [Preact example on CodeSandbox](https://codesandbox.io/s/html-native-modal-on-preact-rwt8y?file=/index.tsx)
 
+[Nested modals example on CodePen](https://codepen.io/luncheon/pen/wvGWaLx/left/)
+
+
 ## Installation
 
 ### npm
