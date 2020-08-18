@@ -14,7 +14,7 @@ Dead simple modal library based on the HTML 5.2 native `<dialog>`.
 
 [Demo](https://luncheon.github.io/html-native-modal/index.html)
 
-[Preact example on CodeSandbox](https://codesandbox.io/s/html-native-modal-on-preact-rwt8y?file=/index.tsx)
+[Preact + TypeScript (TSX) example on CodeSandbox](https://codesandbox.io/s/html-native-modal-on-preact-rwt8y?file=/index.tsx)
 
 [Nested modals example on CodePen](https://codepen.io/luncheon/pen/wvGWaLx/left/)
 
@@ -30,21 +30,21 @@ npm i html-native-modal
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1/html-native-modal.css">
-<script src="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.3.0/html-native-modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/html-native-modal@0.3.0"></script>
 ```
 
 ### Download
 
-* <a target="_blank" download="html-native-modal.css" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1/html-native-modal.css">html-native-modal.css</a>
-* <a target="_blank" download="html-native-modal.js" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.2.1/html-native-modal.js">html-native-modal.js</a>
+* <a target="_blank" download="html-native-modal.min.css" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.3.0/html-native-modal.min.css">html-native-modal.min.css</a>
+* <a target="_blank" download="html-native-modal.min.js" href="https://cdn.jsdelivr.net/npm/html-native-modal@0.3.0/html-native-modal.min.js">html-native-modal.min.js</a>
 
 
 ## Usage
 
 ```html
-<link rel="stylesheet" href="html-native-modal.css">
-<script src="html-native-modal.js"></script>
+<link rel="stylesheet" href="html-native-modal.min.css">
+<script src="html-native-modal.min.js"></script>
 
 <button onclick="this.nextElementSibling.showModal()">Open</button>
 
