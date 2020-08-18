@@ -2,7 +2,7 @@
   const cancel = function (dialog) {
     const event = document.createEvent('Event')
     event.initEvent('cancel', false, true)
-    dialog.dispatchEvent(event) && dialog.close('cancel')
+    dialog.dispatchEvent(event) && dialog.close()
   }
 
   if (typeof HTMLDialogElement === 'undefined') {
